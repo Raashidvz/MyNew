@@ -1,0 +1,186 @@
+.header {
+    background-color: #0d7aa7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: 4b3e1c;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 40px;
+    height: 80px;
+}
+
+
+.back-button {
+    background-color: #0d7aa7;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.back-button-container {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.selection {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    background-color: #0d7aa7;
+}
+
+.selection ul {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.selection ul li {
+    flex: 1;
+    text-align: center;
+}
+
+.selection ul li a {
+    display: block;
+    padding: 15px 0;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.selection ul li a.active {
+    color: #f4f4f9;
+    /* background-color: #0073a7; */
+    position: relative;
+}
+
+.selection ul li a.active::after {
+    content: "";
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    bottom: 0;
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+/* .selection ul li a:hover {
+    color: #f0f0f0;
+} */
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* .container h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #0d7aa7;
+    text-align: center;
+} */
+
+.pdf-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pdf-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pdf-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.pdf-details {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.pdf-details h3 {
+    margin: 0 0 10px;
+    font-size: 14px;
+    color: #0d7aa7;
+}
+
+.pdf-details p {
+    margin: 0;
+    color: #666;
+}
+
+.pdf-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pdf-actions a {
+    text-decoration: none;
+    color: white;
+    background-color: #0d7aa7;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.pdf-actions a:hover {
+    background-color: #0a6b91;
+}
+
+.section {
+    display: none;
+}
+.new-btn{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    color: #0a6b91;
+    width: 70px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.new-btn:hover {
+    color: white;
+    background-color: #0a6b91;
+}

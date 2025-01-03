@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #000000, #0a1c24, #002d40, #00bfff, #ffffff); /* Smooth gradient */
+    background-size: 400% 400%; /* Allow gradient to have smoother flow */
+    animation: gradientFlow 15s ease infinite; /* Slow moving gradient animation */
+    color: #ffffff; /* White for text */
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Keyframes for smooth flowing gradient background */
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: relative;
+    z-index: 10;
+}
+
+nav .logo img {
+    width: 50px;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav .nav-links li a {
+    color: #ffffff; /* White for nav links */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav .nav-links li a:hover {
+    color: #00bfff; /* Soft blue glow on hover */
+    text-shadow: 0 0 15px #00bfff, 0 0 30px rgba(0, 191, 255, 0.5); /* Glow effect toned down */
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    position: relative;
+    z-index: 5;
+}
+
+.hero-text h1 {
+    font-size: 64px; /* Large font size for main title */
+    font-weight: bold;
+    margin-bottom: 20px;
+    max-width: 600px;
+    color: #00bfff; /* Soft blue for the main title */
+    text-shadow: 2px 2px 20px rgba(0, 191, 255, 0.5); /* Shadow softened for depth */
+}
+
+.hero-text h1 span {
+    color: #ffffff; /* White for emphasis */
+}
+
+.hero-text p {
+    font-size: 20px; /* Larger font size */
+    color: #b0c4c4; /* Lighter gray for description */
+    max-width: 500px;
+    margin-bottom: 40px;
+}
+
+.cta-btn {
+    background-color: #00bfff; /* Soft blue button */
+    color: #000000; /* Black text on button */
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.5s ease, box-shadow 0.5s ease; /* Longer, smoother transition */
+    box-shadow: 0 4px 10px rgba(0, 191, 255, 0.4); /* Softer button shadow */
+}
+
+.cta-btn:hover {
+    background-color: #009acd; /* Slightly darker blue on hover */
+    transform: scale(1.1); /* Smooth, slightly larger hover effect */
+    box-shadow: 0 6px 20px rgba(0, 191, 255, 0.6); /* Deep shadow on hover */
+}
+
+.background-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0,0,0,0.6) 10%, rgba(0,191,255,0.4) 40%, rgba(255,255,255,0.3) 100%); /* Gradient with soft transitions */
+    z-index: -1;
+    clip-path: circle(70% at 50% 50%);
+}
+
+.social-icons {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-icons ul {
+    list-style: none;
+}
+
+.social-icons ul li a {
+    color: #ffffff; /* White for social icons */
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.3s ease; /* Added transform transition for icons */
+}
+
+.social-icons ul li a:hover {
+    color: #00bfff; /* Bright blue for hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.social-icons ul li a i {
+    font-size: 24px;
+}
+
+/* Card-like sections with smoother effects */
+.card {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 10px rgba(0, 191, 255, 0.3); /* Softer shadow */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smoother hover effects */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 191, 255, 0.6); /* Deeper shadow on hover */
+}
+.cta-link {
+    display: inline-block; /* Makes the link behave like a button */
+    background-color: #00bfff; /* Soft blue background */
+    color: #000000; /* Black text */
+    padding: 15px 30px; /* Same padding as button */
+    border-radius: 30px; /* Rounded corners */
+    font-size: 18px; /* Same font size as button */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s ease, transform 0.5s ease, box-shadow 0.5s ease; /* Same transitions as button */
+    box-shadow: 0 4px 10px rgba(0, 191, 255, 0.4); /* Soft shadow */
+}
+
+.cta-link:hover {
+    background-color: #009acd; /* Darker blue on hover */
+    transform: scale(1.1); /* Slightly larger on hover */
+    box-shadow: 0 6px 20px rgba(0, 191, 255, 0.6); /* Deeper shadow on hover */
+}
