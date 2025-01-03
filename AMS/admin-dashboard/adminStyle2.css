@@ -1,0 +1,655 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f2f5f9;
+    flex-direction: column;
+    height: 100vh;
+} */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f5f9;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 28px;
+    color: #333;
+}
+/* nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none; 
+}*/
+/* .logout-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 20px; 
+    transition: background-color 0.3s ease;
+} */
+
+/* .logout-btn:hover {
+    background-color: #0056b3;
+} */
+
+.dashboard {
+    display: flex;
+    flex: 1;
+}
+
+/* .sidebar {
+    width: 200px;
+    background-color: #444;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+.sidebar a:hover {
+    background-color: #555;
+} */
+/* .sidebar {
+    width: 200px;
+    background-color: #444;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between; 
+    padding: 20px;
+    box-sizing: border-box; 
+}*/
+.sidebar {
+    width: 280px;
+    background-color: #ffffff;
+    display: flex;
+    border-right: 1px solid #e6e8ec;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;  /* This ensures the logout button is at the bottom */
+    padding: 20px;
+    box-sizing: border-box;
+    position: fixed; /* Keep the sidebar fixed */
+    top: 0; /* Align it to the top */
+    left: 0; /* Align it to the left */
+    overflow-y: auto; /* Allow scrolling within the sidebar if content overflows */
+}
+
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+}
+.sidebar a:hover {
+    /* font-size: 19px;
+    transition: font-size 0.4s; */
+    /* font-weight: bolder; */
+    background-color: #f0f0f5;
+    /* font-variant: small-caps; */
+    transition: font-variant 0.5s;
+}
+
+a.logout-btn {
+    background-color: #585e78;
+    color: white;
+    padding: 10px 0;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Full width of sidebar */
+    text-align: center;
+}
+
+a.logout-btn:hover {
+    color: white;
+    background-color: rgb(233, 72, 72);
+}
+/* .content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+} */
+.content {
+    flex-grow: 1;
+    flex: 1;
+    padding: 30px;
+    box-sizing: border-box;
+    overflow-y: auto; 
+    margin-left: 270px; /* Adjust margin to the width of the sidebar */
+}
+
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+/* Add new buttton  */
+.new-btn{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.new-btn:hover {
+    background-color: #0056b3;
+}
+.new-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+.new-btn.disabled, 
+.new-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+
+/*  button style */
+.update-btn,.delete-btn,.accessAllow-btn,.accessDeny-btn{
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.update-btn:hover {
+    background-color: #0056b3;
+}
+.update-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+/* .update-btn.disabled, 
+.update-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+} */
+
+.delete-btn{
+    background-color: red;
+}
+.delete-btn:hover {
+    background-color: rgb(201, 39, 39);
+}
+td.action-btn{
+    display: flex;
+    justify-content: space-around;
+}
+
+.accessAllow-btn{
+    background-color: red;
+}
+.accessAllow-btn:hover {
+    background-color: rgb(38, 227, 85);
+    
+}
+
+.accessDeny-btn{
+    background-color: rgb(38, 227, 85);
+}
+.accessDeny-btn:hover {
+    background-color: red;
+}
+
+
+/* Cards */
+.overview-cards {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 22px;
+    color: #777;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f2f5f9;
+    flex-direction: column;
+    height: 100vh;
+} */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f5f9;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 28px;
+    color: #333;
+}
+/* nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none; 
+}*/
+/* .logout-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 20px; 
+    transition: background-color 0.3s ease;
+} */
+
+/* .logout-btn:hover {
+    background-color: #0056b3;
+} */
+
+.dashboard {
+    display: flex;
+    flex: 1;
+}
+
+/* .sidebar {
+    width: 200px;
+    background-color: #444;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+.sidebar a:hover {
+    background-color: #555;
+} */
+/* .sidebar {
+    width: 200px;
+    background-color: #444;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between; 
+    padding: 20px;
+    box-sizing: border-box; 
+}*/
+.sidebar {
+    width: 280px;
+    background-color: #ffffff;
+    display: flex;
+    border-right: 1px solid #e6e8ec;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;  /* This ensures the logout button is at the bottom */
+    padding: 20px;
+    box-sizing: border-box;
+    position: fixed; /* Keep the sidebar fixed */
+    top: 0; /* Align it to the top */
+    left: 0; /* Align it to the left */
+    overflow-y: auto; /* Allow scrolling within the sidebar if content overflows */
+}
+
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+}
+.sidebar a:hover {
+    /* font-size: 19px;
+    transition: font-size 0.4s; */
+    /* font-weight: bolder; */
+    background-color: #f0f0f5;
+    /* font-variant: small-caps; */
+    transition: font-variant 0.5s;
+}
+
+a.logout-btn {
+    background-color: #585e78;
+    color: white;
+    padding: 10px 0;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Full width of sidebar */
+    text-align: center;
+}
+
+a.logout-btn:hover {
+    color: white;
+    background-color: rgb(233, 72, 72);
+}
+/* .content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+} */
+.content {
+    flex-grow: 1;
+    flex: 1;
+    padding: 30px;
+    box-sizing: border-box;
+    overflow-y: auto; 
+    margin-left: 270px; /* Adjust margin to the width of the sidebar */
+}
+
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+/* Add new buttton  */
+.new-btn{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.new-btn:hover {
+    background-color: #0056b3;
+}
+.new-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+.new-btn.disabled, 
+.new-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+
+/*  button style */
+.update-btn,.delete-btn,.accessAllow-btn,.accessDeny-btn{
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.update-btn:hover {
+    background-color: #0056b3;
+}
+.update-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+/* .update-btn.disabled, 
+.update-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+} */
+
+.delete-btn{
+    background-color: red;
+}
+.delete-btn:hover {
+    background-color: rgb(201, 39, 39);
+}
+td.action-btn{
+    display: flex;
+    justify-content: space-around;
+}
+
+.accessAllow-btn{
+    background-color: red;
+}
+.accessAllow-btn:hover {
+    background-color: rgb(38, 227, 85);
+    
+}
+
+.accessDeny-btn{
+    background-color: rgb(38, 227, 85);
+}
+.accessDeny-btn:hover {
+    background-color: red;
+}
+
+
+/* Cards */
+.overview-cards {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 22px;
+    color: #777;
+}
+
+
+/* Charts */
+.charts {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.chart-container {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+

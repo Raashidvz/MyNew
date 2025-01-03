@@ -1,0 +1,208 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f1f3f6; /* Light background */
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.dashboard {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #2b2f38; /* Darker slate gray for sidebar */
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 10px;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #505866; /* Slight hover change for sidebar links */
+    font-variant: small-caps;
+}
+
+.logout-btn {
+    background-color: #f44336; /* Red logout button */
+    color: white;
+    padding: 10px 0;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    text-align: center;
+}
+
+.logout-btn:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-left: 220px;
+    background-color: #ffffff; /* White background for content */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f0f0f0; /* Slight gray for table headers */
+}
+
+.new-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4caf50; /* Green button for new actions */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.new-btn:hover {
+    background-color: #388e3c; /* Darker green on hover */
+}
+
+.update-btn, .delete-btn, .accessAllow-btn, .accessDeny-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #2196f3; /* Blue for update and access buttons */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.update-btn:hover {
+    background-color: #1976d2; /* Darker blue on hover */
+}
+
+.delete-btn {
+    background-color: #f44336; /* Red for delete */
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+td.action-btn {
+    display: flex;
+    justify-content: space-around;
+}
+
+.accessAllow-btn {
+    background-color: #4caf50; /* Green for allow */
+}
+
+.accessAllow-btn:hover {
+    background-color: #388e3c; /* Darker green */
+}
+
+.accessDeny-btn {
+    background-color: #f44336; /* Red for deny */
+}
+
+.accessDeny-btn:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+.charts {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.chart-container {
+    width: 48%;
+}
+
+.overview-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card p {
+    font-size: 18px;
+    color: #777;
+}
